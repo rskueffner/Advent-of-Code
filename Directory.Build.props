@@ -1,0 +1,21 @@
+<Project>
+	<PropertyGroup>
+		<Authors>Rob Kueffner</Authors>
+		<Copyright>Copyright © $(Authors) $([System.DateTime]::Now.Year)</Copyright>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<BaseIntermediateOutputPath>$(SolutionDir)\.build\$(Platform).$(Configuration)\$(MSBuildProjectName)\</BaseIntermediateOutputPath>
+		<BaseOutputPath>$(SolutionDir)\.build\$(Platform).$(Configuration)\$(MSBuildProjectName)\</BaseOutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<IntermediateBaseOutputPath>$(BaseIntermediateOutputPath)\.obj\</IntermediateBaseOutputPath>
+		<BaseOutputPath>$(BaseOutputPath)\.bin\</BaseOutputPath>
+	</PropertyGroup>
+</Project>
