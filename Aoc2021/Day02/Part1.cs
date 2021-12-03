@@ -24,7 +24,7 @@ namespace Aoc2021.Day02
             }
         }
 
-        protected IList<Command> commands;
+        protected readonly IList<Command> commands;
 
         public override void Solve()
         {
