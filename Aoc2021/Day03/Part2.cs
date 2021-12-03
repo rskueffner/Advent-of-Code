@@ -10,26 +10,28 @@ namespace Aoc2021.Day03
 
         public override void Solve()
         {
-            var length = this.numbers.First().Length;
-
-            var oxygen = this.numbers;            
-            for (var i = 0; i < length; i++)
+            var generatorReports = this.numbers;
+            for (var i = this.bits; 0 <= i; i--)
             {
-                var bit = MostCommonBit(i, oxygen);
+                var bit = MostCommonBit(i, generatorReports);
 
-                oxygen = oxygen.Where(n => n[i] == bit).ToList();
+                generatorReports = generatorReports
+                    .Where(r => GetBit(i, r) == bit)
+                    .ToList();
             }
 
-            var carbonDioxide = this.numbers;
-            for (var i = 0; i < length; i++)
+            var scrubberReports = this.numbers;
+            for (var i = this.bits; 0 <= i; i--)
             {
-                var bit = LeastCommonBit(i, carbonDioxide);
+                var bit = LeastCommonBit(i, scrubberReports);
 
-                carbonDioxide = carbonDioxide.Where(n => n[i] == bit).ToList();
+                scrubberReports = scrubberReports
+                    .Where(r => GetBit(i, r) == bit)
+                    .ToList();
             }
 
-            var generatorRating = BinaryToDecimal(oxygen.Single());
-            var scrubberRating  = BinaryToDecimal(carbonDioxide.Single());
+            var generatorRating = generatorReports.Single();
+            var scrubberRating = scrubberReports.Single();
 
             var lifeSupportRating = generatorRating * scrubberRating;
 
