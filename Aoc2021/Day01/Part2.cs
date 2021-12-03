@@ -27,9 +27,9 @@ namespace Aoc2021.Day01
 
         public override void Solve()
         {
-            var aggregates = Part2.AggregateMeasurements(this.measurements);
-            var differences = Part2.CalculateDifferences(aggregates);
-            var increases = Part2.CountIncreases(differences);
+            var aggregates = AggregateMeasurements(this.measurements);
+            var differences = CalculateDifferences(aggregates);
+            var increases = CountIncreases(differences);
 
             Console.WriteLine(increases);
         }

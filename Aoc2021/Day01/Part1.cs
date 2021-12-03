@@ -46,8 +46,8 @@ namespace Aoc2021.Day01
 
         public override void Solve()
         {
-            var differences = Part1.CalculateDifferences(this.measurements);
-            var increases = Part1.CountIncreases(differences);
+            var differences = CalculateDifferences(this.measurements);
+            var increases = CountIncreases(differences);
 
             Console.WriteLine(increases);
         }
