@@ -2,14 +2,9 @@
 
 namespace Aoc2021.Day06
 {
-    public class Part2 : Aoc.Part
+    public class Part2 : Part1
     {
         public Part2(String input) : base(input)
         { }
-
-        public override void Solve()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
