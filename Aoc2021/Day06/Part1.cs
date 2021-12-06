@@ -21,11 +21,9 @@ namespace Aoc2021.Day06
 
         protected Int64[] lanterns;
 
-        private void Reproduce(Int32 day)
+        protected void Reproduce(Int32 day)
         {
             if (day == 0) { return; }
-
-            Reproduce(day - 1);
 
             Int32 offset(Int32 index) => (day + index) % 9;
 
@@ -34,7 +32,7 @@ namespace Aoc2021.Day06
 
         public override void Solve()
         {
-            Reproduce(256);
+            for (var d = 1; d <= 80; d++) { Reproduce(d); }
 
             Console.WriteLine(this.lanterns.Sum());
         }

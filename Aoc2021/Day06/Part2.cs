@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Aoc2021.Day06
 {
@@ -6,5 +7,12 @@ namespace Aoc2021.Day06
     {
         public Part2(String input) : base(input)
         { }
+
+        public override void Solve()
+        {
+            for (var d = 1; d <= 256; d++) { Reproduce(d); }
+
+            Console.WriteLine(this.lanterns.Sum());
+        }
     }
 }
