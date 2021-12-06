@@ -15,8 +15,8 @@ namespace Aoc2021.Day05
             {
                 var points = line.Split(" -> ");
 
-                var start = DeserializePoint(points[0]);
-                var end = DeserializePoint(points[1]);
+                var start = Point.Deserialize(points[0]);
+                var end = Point.Deserialize(points[1]);
 
                 var segment = new Segment(start, end);
 
@@ -75,16 +75,6 @@ namespace Aoc2021.Day05
             if (2 <= plane[x, y]) { count += 1; }
 
             Console.WriteLine(count);
-        }
-
-        private static Point DeserializePoint(String line)
-        {
-            var coordinates = line.Split(",");
-
-            var x = Convert.ToInt32(coordinates[0]);
-            var y = Convert.ToInt32(coordinates[1]);
-
-            return new Point(x, y);
         }
     }
 }
