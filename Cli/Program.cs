@@ -7,7 +7,7 @@ namespace Cli
     {
         public static void Main()
         {
-            Invoke<Aoc2021.Day06.Part2>();
+            Invoke<Aoc2021.Day07.Part1>();
         }
 
         private static void Invoke<T>()
