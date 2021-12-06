@@ -37,10 +37,10 @@ namespace Aoc2021.Day04
             }
         }
 
-        private void DeserializeBoards(IList<String> lines)
+        private void DeserializeBoards(IList<String> input)
         {
             var numbers = new List<Int32>();
-            foreach (var line in lines)
+            foreach (var line in input)
             {
                 var row = line
                     .Split(' ')
@@ -63,9 +63,9 @@ namespace Aoc2021.Day04
             }
         }
 
-        private void DeserializeDrawings(String line)
+        private void DeserializeDrawings(String input)
         {
-            foreach (var drawing in line.Split(','))
+            foreach (var drawing in input.Split(','))
             {
                 var number = Convert.ToInt32(drawing);
 
