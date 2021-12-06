@@ -41,30 +41,30 @@ namespace Aoc2021.Day05
             foreach (var segment in this.segments)
             {
                 var x = segment.Start.X;
-                var xUnit = Math.Sign(segment.End.X - segment.Start.X);
+                var xStep = Math.Sign(segment.End.X - segment.Start.X);
 
                 var y = segment.Start.Y;
-                var yUnit = Math.Sign(segment.End.Y - segment.Start.Y);
+                var yStep = Math.Sign(segment.End.Y - segment.Start.Y);
 
                 while (true)
                 {
                     if (ignoreDiagonals)
-                    if (xUnit != 0 && yUnit != 0) { break; }
+                    if (xStep != 0 && yStep != 0) { break; }
 
                     plane[x, y] += 1;
 
-                    if (xUnit != 0)
+                    if (xStep != 0)
                     {
-                        x += xUnit;
+                        x += xStep;
 
-                        if (x == segment.End.X + xUnit) { break; }
+                        if (x == segment.End.X + xStep) { break; }
                     }
 
-                    if (yUnit != 0)
+                    if (yStep != 0)
                     {
-                        y += yUnit;
+                        y += yStep;
 
-                        if (y == segment.End.Y + yUnit) { break; }
+                        if (y == segment.End.Y + yStep) { break; }
                     }
                 }
             }
