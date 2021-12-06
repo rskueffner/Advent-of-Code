@@ -19,33 +19,24 @@ namespace Aoc2021.Day06
             }
         }
 
-        protected readonly Int64[] lanterns;
+        protected Int64[] lanterns;
 
-        private Int64[] Reproduce(Int64[] lanterns)
+        private void Reproduce(Int32 day)
         {
-            var initial = lanterns[0];
+            if (day == 0) { return; }
 
-            for (var i = 0; i < lanterns.Length - 1; i++)
-            {
-                lanterns[i] = lanterns[i + 1];
-            }
+            Reproduce(day - 1);
 
-            lanterns[6] += initial;
-            lanterns[8] = initial;
+            Int32 offset(Int32 index) => (day + index) % 9;
 
-            return lanterns;
+            this.lanterns[offset(6)] += this.lanterns[offset(8)];
         }
 
         public override void Solve()
         {
-            var population = this.lanterns;
+            Reproduce(256);
 
-            for (var day = 0; day < 256; day++)
-            {
-                population = Reproduce(population);
-            }
-
-            Console.WriteLine(population.Sum());
+            Console.WriteLine(this.lanterns.Sum());
         }
     }
 }
