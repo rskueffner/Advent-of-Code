@@ -9,7 +9,7 @@ namespace Aoc2021.Day02
         {
             this.commands = new List<Command>();
 
-            var lines = this.input.Split(Environment.NewLine);
+            var lines = input.Split(Environment.NewLine);
             foreach (var line in lines)
             {
                 var parts = line.Split(' ');

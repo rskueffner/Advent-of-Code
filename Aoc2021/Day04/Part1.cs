@@ -8,7 +8,7 @@ namespace Aoc2021.Day04
     {
         public Part1(String input) : base(input)
         {
-            var lines = this.input.Split(Environment.NewLine);
+            var lines = input.Split(Environment.NewLine);
 
             this.drawings = new List<Int32>();
             DeserializeDrawings(lines[0]);

@@ -16,7 +16,7 @@ namespace Aoc2021.Day04
             for (var turn = 0; turn < this.drawings.Count; turn++)
             foreach (var board in this.boards)
             {
-                if (winners.Keys.Contains(board))
+                if (winners.ContainsKey(board))
                 {
                     continue;
                 }

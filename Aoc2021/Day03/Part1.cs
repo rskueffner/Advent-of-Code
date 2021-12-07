@@ -11,7 +11,7 @@ namespace Aoc2021.Day03
         {
             this.numbers = new List<Int32>();
 
-            var lines = this.input.Split(Environment.NewLine);
+            var lines = input.Split(Environment.NewLine);
             foreach (var line in lines)
             {
                 this.bits = Math.Max(bits, line.Length - 1);
@@ -33,7 +33,7 @@ namespace Aoc2021.Day03
 
         public static Int32 LeastCommonBit(Int32 index, IList<Int32> numbers)
         {
-            if (numbers.Count() == 1)
+            if (numbers.Count == 1)
             {
                 var number = numbers.Single();
                 return GetBit(index, number);
@@ -45,7 +45,7 @@ namespace Aoc2021.Day03
                 ones += GetBit(index, number);
             }
 
-            var zeroes = numbers.Count() - ones;
+            var zeroes = numbers.Count - ones;
             
             if (zeroes <= ones) { return 0; }
             else { return 1; }
@@ -53,7 +53,7 @@ namespace Aoc2021.Day03
 
         public static Int32 MostCommonBit(Int32 index, IList<Int32> numbers)
         {
-            if (numbers.Count() == 1)
+            if (numbers.Count == 1)
             {
                 var number = numbers.Single();
                 return GetBit(index, number);
@@ -65,7 +65,7 @@ namespace Aoc2021.Day03
                 ones += GetBit(index, number);
             }
 
-            var zeroes = numbers.Count() - ones;
+            var zeroes = numbers.Count - ones;
 
             if (zeroes <= ones) { return 1; }
             else { return 0; }

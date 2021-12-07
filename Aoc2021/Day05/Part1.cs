@@ -10,7 +10,7 @@ namespace Aoc2021.Day05
         {
             this.segments = new List<Segment>();
 
-            var lines = this.input.Split(Environment.NewLine);
+            var lines = input.Split(Environment.NewLine);
             foreach (var line in lines)
             {
                 var points = line.Split(" -> ");

@@ -9,7 +9,7 @@ namespace Aoc2021.Day01
         {
             this.measurements = new List<Int32>();
 
-            var lines = this.input.Split(Environment.NewLine);
+            var lines = input.Split(Environment.NewLine);
             foreach (var line in lines)
             {
                 var measurement = Int32.Parse(line);

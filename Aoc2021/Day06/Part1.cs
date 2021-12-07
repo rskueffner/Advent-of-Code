@@ -10,7 +10,7 @@ namespace Aoc2021.Day06
         {
             this.lanterns = new Int64[9];
 
-            var rates = this.input.Split(',');
+            var rates = input.Split(',');
             foreach (var rate in rates)
             {
                 var lifecycle = Convert.ToInt32(rate);

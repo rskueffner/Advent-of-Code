@@ -1,13 +1,11 @@
-﻿namespace Aoc
+﻿using System.Reflection;
+
+namespace Aoc
 {
-    public abstract class Part
+    public abstract class Part : ISolvable
     {
         public Part(String input)
-        {
-            this.input = input;
-        }
-
-        protected readonly String input;
+        { }
 
         public abstract void Solve();
     }
