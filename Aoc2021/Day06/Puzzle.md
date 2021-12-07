@@ -56,7 +56,9 @@ In this example, after 18 days, there are a total of `26` fish. After 80 days, t
 
 Find a way to simulate lanternfish. How many lanternfish would there be after 80 days?
 
+
 Your puzzle answer was `360268`.
+
 
 --- Part Two ---
 
@@ -66,6 +68,5 @@ After 256 days in the example above, there would be a total of `26984457539` lan
 
 How many lanternfish would there be after 256 days?
 
-Your puzzle answer was `1632146183902`.
 
-Both parts of this puzzle are complete! They provide two gold stars: **
+Your puzzle answer was `1632146183902`.
