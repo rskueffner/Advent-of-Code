@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Aoc2021.Day05
 {
-    public class Part1 : Aoc.Part
+    public class Part1 : Aoc.Part<Int32>
     {
         public Part1(String input) : base(input)
         {
@@ -26,12 +26,12 @@ namespace Aoc2021.Day05
 
         protected IList<Segment> segments;
 
-        public override void Solve()
+        public override Int32 Solve()
         {
-            this.Solve(true);
+            return this.Solve(true);
         }
 
-        protected void Solve(Boolean ignoreDiagonals)
+        protected Int32 Solve(Boolean ignoreDiagonals)
         {
             var xMax = this.segments.Max(s => Math.Max(s.Start.X, s.End.X));
             var yMax = this.segments.Max(s => Math.Max(s.Start.Y, s.End.Y));
@@ -74,7 +74,7 @@ namespace Aoc2021.Day05
             for (var x = 0; x <= xMax; x++)
             if (2 <= plane[x, y]) { count += 1; }
 
-            Console.WriteLine(count);
+            return count;
         }
     }
 }

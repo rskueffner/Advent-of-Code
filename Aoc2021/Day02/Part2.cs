@@ -4,10 +4,9 @@ namespace Aoc2021.Day02
 {
     public class Part2 : Part1
     {
-        public Part2(String input) : base(input)
-        { }
+        public Part2(String input) : base(input) { }
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             var horizontalPosition = 0;
             var depth = 0;
@@ -33,7 +32,7 @@ namespace Aoc2021.Day02
                     throw new NotSupportedException();
             }
 
-            Console.WriteLine(horizontalPosition * depth);
+            return horizontalPosition * depth;
         }
     }
 }

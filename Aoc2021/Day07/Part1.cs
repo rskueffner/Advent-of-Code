@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Aoc2021.Day07
 {
-    public class Part1 : Aoc.Part
+    public class Part1 : Aoc.Part<Int32>
     {
         public Part1(String input) : base(input)
         {
@@ -31,7 +31,7 @@ namespace Aoc2021.Day07
             return Math.Abs(destination - origin);
         }
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             var min = this.positions.Keys.Min();
             var max = this.positions.Keys.Max();
@@ -48,7 +48,7 @@ namespace Aoc2021.Day07
                 outcomes[destination] += Cost(destination, position.Key) * position.Value;
             }
 
-            Console.WriteLine(outcomes.Values.Min());
+            return outcomes.Values.Min();
         }
     }
 }

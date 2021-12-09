@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Aoc2021.Day02
 {
-    public class Part1 : Aoc.Part
+    public class Part1 : Aoc.Part<Int32>
     {
         public Part1(String input) : base(input)
         {
@@ -26,7 +26,7 @@ namespace Aoc2021.Day02
 
         protected readonly IList<Command> commands;
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             var horizontalPosition = 0;
             var depth = 0;
@@ -50,7 +50,7 @@ namespace Aoc2021.Day02
                     throw new NotSupportedException();
             }
 
-            Console.WriteLine(horizontalPosition * depth);
+            return horizontalPosition * depth;
         }
     }
 }

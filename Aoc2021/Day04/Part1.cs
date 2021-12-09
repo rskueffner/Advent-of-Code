@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Aoc2021.Day04
 {
-    public class Part1 : Aoc.Part
+    public class Part1 : Aoc.Part<Int32>
     {
         public Part1(String input) : base(input)
         {
@@ -21,20 +21,17 @@ namespace Aoc2021.Day04
 
         protected IList<Int32> drawings;
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             foreach (var drawing in this.drawings)
             foreach (var board in this.boards)
             {
                 board.Record(drawing);
 
-                if (board.IsWinner())
-                {
-                    Console.WriteLine(board.Score(drawing));
-
-                    return;
-                }
+                if (board.IsWinner()) { return board.Score(drawing); }
             }
+
+            throw new NotImplementedException();
         }
 
         private void DeserializeBoards(IList<String> input)

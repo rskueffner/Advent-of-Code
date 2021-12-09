@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Aoc2021.Day03
 {
-    public class Part1 : Aoc.Part
+    public class Part1 : Aoc.Part<Int32>
     {
         public Part1(String input) : base(input)
         {
@@ -71,7 +70,7 @@ namespace Aoc2021.Day03
             else { return 0; }
         }
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             var gamma = String.Empty;
             for (var i = this.bits; 0 <= i; i--)
@@ -88,9 +87,7 @@ namespace Aoc2021.Day03
             var gammaRate = Convert.ToInt32(gamma, 2);
             var epsilonRate = Convert.ToInt32(epsilon, 2);
 
-            var powerConsumption = gammaRate * epsilonRate;
-
-            Console.Write(powerConsumption);
+            return gammaRate * epsilonRate;
         }
     }
 }

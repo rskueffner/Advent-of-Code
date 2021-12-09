@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IO;
 
 namespace Cli
 {
@@ -7,25 +6,7 @@ namespace Cli
     {
         public static void Main()
         {
-            Invoke<Aoc2021.Day07.Part1>();
-        }
-
-        private static void Invoke<T>()
-        where T : Aoc.Part
-        {
-            using (var stream = typeof(T).Assembly.GetManifestResourceStream(typeof(T), "Input.txt"))
-            using (var reader = new StreamReader(stream))
-            {
-                var input = reader.ReadToEnd();
-
-                var signature = new Type[] { typeof(String) };
-                var constructor = typeof(T).GetConstructor(signature);
-
-                var parameters = new Object[] { input };
-                var part = constructor.Invoke(parameters) as T;
-
-                part.Solve();
-            }
+            Aoc.PartSolver.Solve<Aoc2021.Day08.Part1, Int32>();
         }
     }
 }

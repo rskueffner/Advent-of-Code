@@ -5,8 +5,7 @@ namespace Aoc2021.Day01
 {
     public class Part2 : Part1
     {
-        public Part2(String input) : base(input)
-        { }
+        public Part2(String input) : base(input) { }
 
         public static IList<Int32> AggregateMeasurements(IList<Int32> measurements, Int32 windowSize = 3)
         {
@@ -25,13 +24,13 @@ namespace Aoc2021.Day01
             return aggregates;
         }
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             var aggregates = AggregateMeasurements(this.measurements);
             var differences = CalculateDifferences(aggregates);
             var increases = CountIncreases(differences);
 
-            Console.WriteLine(increases);
+            return increases;
         }
     }
 }

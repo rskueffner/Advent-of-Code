@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Aoc2021.Day01
 {
-    public class Part1 : Aoc.Part
+    public class Part1 : Aoc.Part<Int32>
     {
         public Part1(String input) : base(input)
         {
@@ -44,12 +44,12 @@ namespace Aoc2021.Day01
             return count;
         }
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             var differences = CalculateDifferences(this.measurements);
             var increases = CountIncreases(differences);
 
-            Console.WriteLine(increases);
+            return increases;
         }
     }
 }

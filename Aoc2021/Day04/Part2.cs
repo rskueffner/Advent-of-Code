@@ -6,10 +6,9 @@ namespace Aoc2021.Day04
 {
     public class Part2 : Part1
     {
-        public Part2(String input) : base(input)
-        { }
+        public Part2(String input) : base(input) { }
 
-        public override void Solve()
+        public override Int32 Solve()
         {
             var winners = new Dictionary<Board, Int32>();
 
@@ -36,7 +35,7 @@ namespace Aoc2021.Day04
                 .Select(w => w.Key)
                 .Single();
 
-            Console.WriteLine(loser.Score(this.drawings[maxTurn]));
+            return loser.Score(this.drawings[maxTurn]);
         }
     }
 }

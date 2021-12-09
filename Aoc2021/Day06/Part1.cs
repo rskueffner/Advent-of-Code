@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace Aoc2021.Day06
 {
-    public class Part1 : Aoc.Part
+    public class Part1 : Aoc.Part<Int64>
     {
         public Part1(String input) : base(input)
         {
@@ -30,11 +29,16 @@ namespace Aoc2021.Day06
             this.lanterns[offset(6)] += this.lanterns[offset(8)];
         }
 
-        public override void Solve()
+        protected Int64 Population(Int32 generation)
         {
-            for (var d = 1; d <= 80; d++) { Reproduce(d); }
+            for (var d = 1; d <= generation; d++) { Reproduce(d); }
 
-            Console.WriteLine(this.lanterns.Sum());
+            return this.lanterns.Sum();
+        }
+
+        public override Int64 Solve()
+        {
+            return this.Population(80);
         }
     }
 }

@@ -2,11 +2,10 @@
 
 namespace Aoc
 {
-    public abstract class Part : ISolvable
+    public abstract class Part<T> : ISolvable<T>
     {
-        public Part(String input)
-        { }
+        public Part(String input) { }
 
-        public abstract void Solve();
+        public abstract T Solve();
     }
 }
